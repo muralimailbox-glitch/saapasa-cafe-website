@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saapasá Night Ritual</title>
+<meta name="description" content="Saapasá Café, Whitefield — the Night Ritual edition. Slow coffee, hand-tossed pizzas and Andhra soul bowls, served in a room that glows.">
+<!-- SAAPASÁ CAFÉ — Design 2 "Night Ritual" — by SnapSiteBuild.com -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#0b140d; --moss:#142418; --moss2:#1c3322;
+  --cream:#f2ead8; --cream-dim:rgba(242,234,216,.62);
+  --glow:#ffd9a0; --amber:#e0a85e; --sage:#9db98f;
+  --hair:rgba(242,234,216,.14);
+  --big:"Archivo","Arial Narrow",Impact,sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Jost","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{
+  background:var(--bg);color:var(--cream);
+  font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.6;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance}
+.micro{
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400;
+  line-height:1.9;color:var(--cream-dim);max-width:220px;
+}
+.eyebrow{font-size:.7rem;letter-spacing:.38em;text-transform:uppercase;font-weight:400;color:var(--sage)}
+
+/* grain + vignette atmosphere */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:90;
+  background:radial-gradient(120% 90% at 50% 10%,transparent 60%,rgba(0,0,0,.5));
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:calc(16px + env(safe-area-inset-top,0px)) clamp(16px,4vw,44px) 14px;
+  mix-blend-mode:normal;
+  background:linear-gradient(rgba(11,20,13,.9),rgba(11,20,13,.5) 70%,transparent);
+  backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand img{height:40px}
+nav .brand span{font-family:var(--serif);letter-spacing:.16em;font-size:1.05rem}
+nav ul{display:flex;gap:clamp(12px,2.4vw,30px);list-style:none;align-items:center}
+nav ul a{text-decoration:none;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;opacity:.85;transition:.2s}
+nav ul a:hover{opacity:1;color:var(--glow)}
+.wa-pill{
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--hair);border-radius:999px;
+  padding:8px 16px !important;white-space:nowrap;transition:.25s;
+}
+.wa-pill svg{width:14px;height:14px;fill:currentColor}
+.wa-pill:hover{background:var(--glow);color:var(--bg);border-color:var(--glow)}
+@media(max-width:760px){ nav ul li.hideable{display:none} }
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;overflow:hidden;
+  display:grid;place-items:center;
+  background:
+    radial-gradient(50% 38% at 50% 62%,rgba(255,217,160,.14),transparent 70%),
+    radial-gradient(80% 60% at 50% 110%,#1d3423,transparent 70%),
+    var(--bg);
+  padding:110px 16px 80px;
+}
+.leaf{
+  position:absolute;border-radius:0 50% 0 50%;
+  background:linear-gradient(135deg,rgba(157,185,143,.32),rgba(157,185,143,.05));
+  filter:blur(1px);pointer-events:none;
+}
+.hero-type{
+  position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;
+}
+.hero-word{
+  font-family:var(--big);font-stretch:118%;font-weight:800;
+  font-size:clamp(3.4rem,14.5vw,11.5rem);line-height:.92;letter-spacing:.01em;
+  color:var(--cream);text-transform:uppercase;
+}
+.hero-word.back{position:relative;z-index:1}
+.hero-word.front{position:relative;z-index:3}
+.hero-dish{
+  position:relative;z-index:2;width:min(64vw,430px);margin:calc(clamp(-3rem,-6vw,-5rem)) auto;
+  filter:drop-shadow(0 50px 60px rgba(0,0,0,.65)) drop-shadow(0 0 70px rgba(255,217,160,.22));
+  will-change:transform;
+}
+.hero-sub{
+  position:relative;z-index:4;margin-top:26px;text-align:center;
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(1rem,2.2vw,1.35rem);color:var(--glow);
+}
+.hero-inner{position:relative;display:grid;justify-items:center}
+.corner{position:absolute;z-index:5}
+.corner.tl{top:calc(96px + env(safe-area-inset-top,0px));left:clamp(16px,4vw,44px)}
+.corner.br{bottom:clamp(60px,9vh,90px);right:clamp(16px,4vw,44px);text-align:right}
+.corner.bl{bottom:clamp(60px,9vh,90px);left:clamp(16px,4vw,44px)}
+.corner .num{font-family:var(--serif);font-style:italic;color:var(--amber);font-size:.95rem;letter-spacing:.2em;margin-bottom:6px}
+.hero-ctas{position:relative;z-index:5;margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;border-radius:999px;
+  padding:13px 30px;font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;transition:.25s;
+}
+.btn-solid{background:var(--cream);color:var(--bg)}
+.btn-solid:hover{background:var(--glow)}
+.btn-ghost{border:1px solid var(--hair);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--glow);color:var(--glow)}
+.scroll-hint{
+  position:absolute;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;translate:-50% 0;z-index:5;
+  font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--cream-dim);
+}
+.scroll-hint::after{content:"";display:block;width:1px;height:30px;margin:8px auto 0;background:linear-gradient(var(--cream),transparent);animation:drip 1.8s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:700px){
+  .corner{display:none}
+  .hero-dish{width:min(74vw,340px)}
+}
+
+/* ---------- marquee ---------- */
+.marquee{
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  overflow:hidden;white-space:nowrap;padding:14px 0;background:rgba(20,36,24,.5);
+}
+.marquee .track{display:inline-block;animation:slide 40s linear infinite}
+.marquee span{font-family:var(--serif);font-size:1rem;letter-spacing:.22em;text-transform:uppercase;margin:0 1.5em;color:var(--cream-dim)}
+.marquee .n{color:var(--amber);margin:0}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- ritual chapters ---------- */
+.chapter{
+  position:relative;min-height:92svh;overflow:hidden;
+  display:grid;place-items:center;padding:90px 16px;
+}
+.chapter+.chapter{border-top:1px solid var(--hair)}
+.ghost{
+  position:absolute;top:50%;left:0;translate:0 -50%;white-space:nowrap;
+  font-family:var(--big);font-stretch:120%;font-weight:900;text-transform:uppercase;
+  font-size:clamp(6rem,24vw,19rem);line-height:1;
+  color:transparent;-webkit-text-stroke:1px rgba(242,234,216,.13);
+  pointer-events:none;will-change:transform;
+}
+.ch-inner{position:relative;z-index:2;display:grid;justify-items:center;text-align:center;max-width:760px}
+.ch-inner .eyebrow{margin-bottom:16px}
+.ch-inner img{
+  width:min(66vw,400px);max-height:44svh;object-fit:contain;
+  filter:drop-shadow(0 44px 54px rgba(0,0,0,.65)) drop-shadow(0 0 60px rgba(255,217,160,.18));
+  will-change:transform;
+}
+.ch-inner h2{
+  font-family:var(--big);font-stretch:114%;font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.8rem,5.4vw,3.6rem);letter-spacing:.02em;margin-top:26px;
+}
+.ch-inner .dishline{
+  margin-top:12px;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--glow);
+}
+.ch-inner p.desc{margin-top:12px;color:var(--cream-dim);max-width:52ch;font-size:.95rem}
+.ch-side{position:absolute;z-index:2}
+.ch-side.l{left:clamp(16px,4vw,44px);bottom:clamp(40px,8vh,80px)}
+.ch-side.r{right:clamp(16px,4vw,44px);top:clamp(120px,18vh,180px);text-align:right}
+@media(max-width:700px){ .ch-side{display:none} }
+
+/* ---------- menu (dark) ---------- */
+.menu-sec{padding:110px clamp(16px,5vw,64px) 120px;background:linear-gradient(180deg,var(--bg),var(--moss) 50%,var(--bg))}
+.menu-head{text-align:center;max-width:720px;margin:0 auto 50px}
+.menu-head h2{font-family:var(--big);font-stretch:114%;font-weight:800;text-transform:uppercase;font-size:clamp(2rem,6vw,3.8rem);margin-top:12px}
+.menu-head p{margin-top:14px;color:var(--cream-dim);font-size:.98rem}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 auto 46px;max-width:940px}
+.tab{
+  font-family:var(--sans);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  padding:11px 18px;cursor:pointer;color:var(--cream);
+  background:transparent;border:1px solid var(--hair);border-radius:999px;transition:.22s;
+}
+.tab:hover{border-color:var(--glow);color:var(--glow)}
+.tab[aria-selected="true"]{background:var(--cream);color:var(--bg);border-color:var(--cream)}
+.menu-panel{max-width:1040px;margin:0 auto;display:none;grid-template-columns:320px 1fr;gap:clamp(24px,4vw,60px);align-items:start}
+.menu-panel.on{display:grid}
+.panel-art{
+  position:sticky;top:120px;display:grid;place-items:center;min-height:400px;padding:34px 22px;
+  background:radial-gradient(60% 50% at 50% 35%,rgba(255,217,160,.2),transparent 75%),var(--moss2);
+  border:1px solid var(--hair);border-radius:16px;
+}
+.panel-art img{width:86%;max-height:280px;object-fit:contain;filter:drop-shadow(0 26px 30px rgba(0,0,0,.6));will-change:transform}
+.panel-art .bignote{font-family:var(--serif);font-size:5.4rem;color:var(--glow);line-height:1;text-shadow:0 0 50px rgba(255,217,160,.5)}
+.panel-art .cap{margin-top:16px;color:var(--glow);font-family:var(--serif);font-style:italic;text-align:center}
+.items{display:grid;gap:4px}
+.items .group{margin:20px 0 4px;font-family:var(--serif);font-size:1.2rem;color:var(--sage);letter-spacing:.06em}
+.items .group:first-child{margin-top:0}
+.item{display:flex;align-items:baseline;gap:10px;padding:9px 4px;border-radius:8px;transition:background .2s}
+.item:hover{background:rgba(242,234,216,.05)}
+.item .nm{font-weight:400;font-size:.98rem}
+.item .dots{flex:1;border-bottom:1px dotted rgba(242,234,216,.28);transform:translateY(-4px)}
+.item .pr{font-family:var(--serif);font-size:1rem;color:var(--glow);font-variant-numeric:tabular-nums;white-space:nowrap}
+.item .ds{display:block;font-size:.82rem;color:var(--cream-dim);max-width:52ch;margin-top:2px}
+.item>div:first-child{max-width:75%}
+.fine{margin-top:16px;font-size:.8rem;color:var(--cream-dim);font-style:italic}
+@media(max-width:860px){
+  .menu-panel{grid-template-columns:1fr}
+  .panel-art{position:static;min-height:280px;max-width:420px;margin:0 auto;width:100%}
+}
+
+/* ---------- ambience ---------- */
+.amb{padding:110px 0 120px;overflow:hidden;border-top:1px solid var(--hair)}
+.amb-head{text-align:center;max-width:760px;margin:0 auto 56px;padding:0 16px}
+.amb-head h2{font-family:var(--big);font-stretch:114%;font-weight:800;text-transform:uppercase;font-size:clamp(1.9rem,5.4vw,3.4rem);margin-top:12px}
+.amb-head p{margin-top:14px;color:var(--cream-dim)}
+.amb-row{display:flex;gap:clamp(14px,2vw,26px);width:max-content;padding:0 clamp(16px,5vw,64px);will-change:transform}
+.amb-card{
+  width:clamp(230px,26vw,330px);flex:none;border-radius:14px;overflow:hidden;
+  border:1px solid var(--hair);box-shadow:0 30px 50px -18px rgba(0,0,0,.7);
+}
+.amb-card.wide{width:clamp(320px,38vw,480px)}
+.amb-card img{width:100%;height:clamp(320px,44vh,430px);object-fit:cover;filter:saturate(.94)}
+.amb-note{
+  flex:none;display:grid;place-items:center;width:clamp(210px,24vw,300px);
+  border:1px dashed rgba(255,217,160,.35);border-radius:14px;padding:26px;text-align:center;
+}
+.amb-note p{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--glow);line-height:1.5}
+
+/* ---------- visit ---------- */
+.visit{padding:110px clamp(16px,5vw,64px);border-top:1px solid var(--hair);background:radial-gradient(70% 50% at 50% 0%,rgba(255,217,160,.08),transparent 70%)}
+.visit-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.visit-media{position:relative}
+.visit-media .photo{border-radius:16px;overflow:hidden;border:1px solid var(--hair);box-shadow:0 40px 70px -24px rgba(0,0,0,.7)}
+.visit-media .photo img{width:100%;height:clamp(380px,54vh,520px);object-fit:cover}
+.visit-media video{
+  position:absolute;right:-6%;bottom:-9%;width:36%;border-radius:12px;
+  border:3px solid var(--moss2);box-shadow:0 24px 44px -12px rgba(0,0,0,.8);
+}
+.visit-info h2{font-family:var(--big);font-stretch:114%;font-weight:800;text-transform:uppercase;font-size:clamp(1.9rem,5vw,3.2rem);margin:12px 0 18px}
+.visit-info p.lead{color:var(--cream-dim);max-width:46ch}
+.v-rows{margin-top:30px;display:grid;gap:18px}
+.v-row{display:flex;gap:16px;align-items:flex-start}
+.v-row .ic{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--moss2);border:1px solid var(--hair);color:var(--glow)}
+.v-row .ic svg{width:17px;height:17px;fill:currentColor}
+.v-row b{display:block;font-weight:500;letter-spacing:.08em;font-size:.86rem;text-transform:uppercase;color:var(--sage)}
+.v-row span{color:var(--cream-dim);font-size:.94rem}
+.visit-ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:860px){
+  .visit-grid{grid-template-columns:1fr}
+  .visit-media video{right:0;bottom:-6%}
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--hair);text-align:center;
+  padding:70px clamp(16px,5vw,64px) calc(46px + env(safe-area-inset-bottom,0px));
+}
+footer .flogo{height:100px;margin:0 auto 18px;opacity:.95}
+footer .tag{font-family:var(--serif);font-style:italic;color:var(--glow);font-size:1.05rem}
+footer .sep{width:60px;height:1px;background:var(--hair);margin:28px auto}
+.credit{font-size:.84rem;letter-spacing:.06em;color:var(--cream-dim)}
+.credit a{color:var(--glow);text-decoration:none;font-weight:500}
+.credit a:hover{text-decoration:underline}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#top" aria-label="Saapasá Café home">
+    <img src="assets/photos/logo-white.png" alt="Saapasá Café logo">
+    <span>SAAPASÁ</span>
+  </a>
+  <ul>
+    <li class="hideable"><a href="#ritual">The Ritual</a></li>
+    <li class="hideable"><a href="#menu">Menu</a></li>
+    <li class="hideable"><a href="#ambience">The Space</a></li>
+    <li class="hideable"><a href="#visit">Visit</a></li>
+    <li><a class="wa-pill" href="https://wa.me/918499036816" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2a9.9 9.9 0 0 0-8.5 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8m-3 4.4c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.2.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-1 1.2c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5v-.5L9.7 8.6c-.2-.4-.4-.4-.7-.4"/></svg>
+      WhatsApp</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="leaf" style="width:120px;height:120px;top:16%;left:8%"></div>
+  <div class="leaf" style="width:70px;height:70px;top:64%;left:16%;rotate:40deg"></div>
+  <div class="leaf" style="width:90px;height:90px;top:24%;right:10%;rotate:-30deg"></div>
+  <div class="leaf" style="width:56px;height:56px;top:70%;right:18%;rotate:70deg"></div>
+
+  <div class="corner tl">
+    <div class="num">est. Whitefield</div>
+    <p class="micro">Untouched comfort, brewed for your daily clarity and peace of mind.</p>
+  </div>
+  <div class="corner bl">
+    <p class="micro">In-house focaccia · hand-tossed pizzas · slow coffee · Andhra soul bowls</p>
+  </div>
+  <div class="corner br">
+    <div class="num">★ 4.7 on Google</div>
+    <p class="micro" style="margin-left:auto">Where every flavour hits the right note — sa · pa · sa</p>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-word back" id="w1">Sip&nbsp;the</div>
+    <img class="hero-dish" id="heroDish" src="assets/cutouts/latte.webp" alt="Saapasá latte in a green ceramic cup">
+    <div class="hero-word front" id="w2">Ritual</div>
+    <div class="hero-sub">an evening at Saapasá Café, Whitefield</div>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="#menu">Explore the menu</a>
+      <a class="btn btn-ghost" href="#visit">Find us</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="mq"></div></div>
+
+<section id="ritual">
+  <div class="chapter" id="ch1">
+    <div class="ghost">Morning · Morning ·</div>
+    <div class="ch-inner">
+      <div class="eyebrow">Chapter 01 — First Light</div>
+      <img src="assets/cutouts/smoothie-bowl.webp" alt="Berry smoothie bowl">
+      <h2>Breathe the freshness</h2>
+      <div class="dishline">Berry Blast Smoothie Bowl — ₹249</div>
+      <p class="desc">Whole-wheat pancakes, cold-pressed juices and smoothie bowls topped with fruit, seeds and granola. Mornings, thoughtfully crafted.</p>
+    </div>
+    <div class="ch-side l"><p class="micro">ABC juice · avocado toast · classic pancakes</p></div>
+  </div>
+
+  <div class="chapter" id="ch2">
+    <div class="ghost">Soul&nbsp;Bowl · Soul&nbsp;Bowl ·</div>
+    <div class="ch-inner">
+      <div class="eyebrow">Chapter 02 — The Fire</div>
+      <img src="assets/cutouts/saapasa-avakaya.webp" alt="Saapasá avakaya rice bowl">
+      <h2>Taste the homeland</h2>
+      <div class="dishline">Saapasá Avakaya Rice Bowl — ₹349</div>
+      <p class="desc">Fiery homemade avakaya, crunchy podi and a drizzle of ghee over steamed rice — Andhra comfort, exactly as it should be.</p>
+    </div>
+    <div class="ch-side r"><p class="micro">Gongura heritage bowl · muddha pappu · Thai curries</p></div>
+  </div>
+
+  <div class="chapter" id="ch3">
+    <div class="ghost">Hand&nbsp;Tossed · Hand&nbsp;Tossed ·</div>
+    <div class="ch-inner">
+      <div class="eyebrow">Chapter 03 — The Hearth</div>
+      <img src="assets/cutouts/margherita-pizza.webp" alt="Hand-tossed margherita pizza">
+      <h2>Fresh from the flame</h2>
+      <div class="dishline">Margherita, Hand-Tossed — ₹329</div>
+      <p class="desc">Hand-tossed pizzas, in-house focaccia sandwiches and slow-simmered pastas on perfectly cooked durum wheat.</p>
+    </div>
+    <div class="ch-side l"><p class="micro">Paneer tikka · rustic mushroom · pesto spaghetti</p></div>
+  </div>
+
+  <div class="chapter" id="ch4">
+    <div class="ghost">Closing&nbsp;Note · Closing&nbsp;Note ·</div>
+    <div class="ch-inner">
+      <div class="eyebrow">Chapter 04 — After Dark</div>
+      <img src="assets/cutouts/lotus-biscoff.webp" alt="Lotus Biscoff dessert jar">
+      <h2>End on a sweet note</h2>
+      <div class="dishline">Lotus Biscoff Jar — ₹269</div>
+      <p class="desc">Tiramisu, Turkish kunafa and Biscoff jars under warm amber light — the closing note of the ritual.</p>
+    </div>
+    <div class="ch-side r"><p class="micro">Affogato · brownie fudge · signature Ferrero</p></div>
+  </div>
+</section>
+
+<section class="menu-sec" id="menu">
+  <div class="menu-head">
+    <div class="eyebrow">The Full Score</div>
+    <h2>The Menu</h2>
+    <p>Everything made right here, with a whole lot of love.</p>
+  </div>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div id="panels"></div>
+</section>
+
+<section class="amb" id="ambience">
+  <div class="amb-head">
+    <div class="eyebrow">The Space</div>
+    <h2>A room that glows</h2>
+    <p>Backlit arches, dried wheat, cane and warm plaster — built for slow coffee and long conversations.</p>
+  </div>
+  <div class="amb-row" id="ambRow">
+    <div class="amb-card"><img src="assets/photos/arches-wall.webp" alt="Backlit arch niches with dried wheat"></div>
+    <div class="amb-card wide"><img src="assets/photos/exterior-night.webp" alt="Saapasá Café storefront glowing at night"></div>
+    <div class="amb-card"><img src="assets/photos/book-corner.webp" alt="Cane bookshelf with novels and board games"></div>
+    <div class="amb-note"><p>&ldquo;Named for the soulful notes of a musical scale — a little harmony for your daily rhythm.&rdquo;</p></div>
+    <div class="amb-card"><img src="assets/photos/int-4.webp" alt="Café interior"></div>
+    <div class="amb-card wide"><img src="assets/photos/int-1.webp" alt="Café seating"></div>
+    <div class="amb-card"><img src="assets/photos/int-5.webp" alt="Café corner"></div>
+    <div class="amb-card wide"><img src="assets/photos/int-8.webp" alt="Café interior detail"></div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="visit-grid">
+    <div class="visit-media" id="visitMedia">
+      <div class="photo"><img src="assets/photos/exterior-day.webp" alt="Saapasá Café entrance with bougainvillea"></div>
+      <video src="assets/storefront-reel.mp4" muted loop playsinline autoplay aria-label="Short film of the café storefront"></video>
+    </div>
+    <div class="visit-info">
+      <div class="eyebrow">Visit Us</div>
+      <h2>Come find your note</h2>
+      <p class="lead">Climb the bougainvillea steps, take the corner by the window, and stay a while. Walk-ins always welcome.</p>
+      <div class="v-rows">
+        <div class="v-row">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg></div>
+          <div><b>Address</b><span>Ground Floor, SLN Complex, Vijayanagar Main Rd,<br>opposite NVT Life Square, Whitefield, Bengaluru 560066</span></div>
+        </div>
+        <div class="v-row">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m4.2 14.2L11 13.3V7h1.5v5.4l4.5 2.7Z"/></svg></div>
+          <div><b>Hours</b><span>Open daily · breakfast onwards, until 10:30 PM</span></div>
+        </div>
+        <div class="v-row">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1Z"/></svg></div>
+          <div><b>Call / WhatsApp</b><span>+91 84990 36816</span></div>
+        </div>
+        <div class="v-row">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4Zm9.65 1.5a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5m0 2a3 3 0 1 0 3 3 3 3 0 0 0-3-3"/></svg></div>
+          <div><b>Instagram</b><span><a href="https://www.instagram.com/saapasa_cafe/" target="_blank" rel="noopener" style="text-decoration:none">@saapasa_cafe</a> &nbsp;·&nbsp; ★ 4.7 on Google</span></div>
+        </div>
+      </div>
+      <div class="visit-ctas">
+        <a class="btn btn-solid" href="https://wa.me/918499036816" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/MykhM6MiEktZDTkL8" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img class="flogo" src="assets/photos/logo-white.png" alt="Saapasá Café">
+  <div class="tag">where every flavour hits the right note</div>
+  <div class="sep"></div>
+  <div class="credit">Website crafted by <a href="https://www.snapsitebuild.com" target="_blank" rel="noopener">SnapSiteBuild.com</a></div>
+</footer>
+
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script>
+const MENU = [
+ {tab:'Coffee', art:'assets/cutouts/latte.webp', cap:'Slow-brewed, softly lit', groups:[
+   {g:'Coffee Classics', items:[['Espresso',139],['Classic Americano',159],['Iced Americano',169],['Flat White',209]]},
+   {g:'Cappuccino', items:[['Classic Cappuccino',199],['Vanilla Cappuccino',219],['Hazelnut Cappuccino',229],['Irish Cappuccino',239]]},
+   {g:'Latte', items:[['Classic Latte',209],['Hazelnut Latte',229],['Irish Latte',239],['Spanish Latte',239],['Iced Latte',239],['Classic Caffè Mocha',219]]},
+   {g:'Saapasá Signature', items:[['Classic Hot Chocolate',249],['Affogato',269],['Special Affogato — Nutella / Hazelnut / Mocha',289]]}
+  ], fine:'Also available in oat milk · +₹40'},
+ {tab:'Frappes & Shakes', art:'assets/cutouts/lotus-biscoff.webp', cap:'Cold, creamy, loud', groups:[
+   {g:'Frappes & Cold Coffees', items:[['Coffee on the Rocks',199],['Classic Frappe',229],['Mocha Frappe',239],['Java Chip Frappe',249],['Caramel Frappe',249],['Hazelnut Frappe',269],['Biscoff Frappe',269]]},
+   {g:'Thick Shakes', items:[['Strawberry Thickshake',189],['Mango Thickshake',189],['Berry Pop Thickshake',239],['Cookies & Cream',239],['KitKat',239],['Salted Caramel Crunch',249],['Brownie Fudge',249],['Saapasá Signature Ferrero',269]]}
+  ]},
+ {tab:'Breakfast', art:'assets/cutouts/green-fresh-sandwich.webp', cap:'Whole wheat, honest mornings', groups:[
+   {g:'Pancakes', items:[['Classic Pancakes',169,'Fluffy whole wheat pancakes with maple syrup and fresh fruit'],['Nutella Pancakes',189,'Generously filled with creamy Nutella']]},
+   {g:'Healthy Toasts', items:[['French Toast',169,'Golden, with maple syrup and fresh fruit'],['Hummus Toast',189,'House hummus on whole wheat, topped with fresh veggies'],['Avocado Toast',219,'Creamy guacamole, olive oil, chilli flakes'],['Pesto Paneer Toast',219,'Grilled paneer with vibrant pesto']]}
+  ]},
+ {tab:'Smoothies & Juices', art:'assets/cutouts/smoothie-bowl.webp', cap:'Nourishment, elevated', groups:[
+   {g:'Smoothies & Bowls', items:[['Peanut Butter Banana Smoothie',199],['Coffee Walnut Smoothie',229],['Choco Bliss Smoothie',229],['Berry Blast Smoothie Bowl',249],['Tropical Smoothie Bowl',269],['Avocado Smoothie Bowl',269]]},
+   {g:'Cold-Pressed Juices', items:[['ABC Juice',99,'Amla, beetroot & carrot'],['Carrot Juice',99],['Green Zen Cooler',99,'Cucumber, mint, lemon & ginger']]}
+  ]},
+ {tab:'Sandwiches & Short Eats', art:'assets/cutouts/bbq-paneer-sandwich.webp', cap:'On in-house focaccia', groups:[
+   {g:'Focaccia Sandwiches', items:[['Garden Fresh Sandwich',259],['Spinach Corn Sandwich',269],['Greek Mushroom Sandwich',279],['BBQ Paneer Sandwich',279]]},
+   {g:'Short Eats', items:[['Salted Fries',179],['Peri Peri Fries',189],['Artisanal Garlic Bread',199],['Loaded Nachos',229]]}
+  ], fine:'Sandwiches also available in whole wheat · +₹30'},
+ {tab:'Pasta', art:'assets/cutouts/alfredo-penne.webp', cap:'Durum wheat, cooked to the bite', groups:[
+   {g:'Spaghetti', items:[['Aglio e Olio',359,'Olive oil, garlic, chilli flakes, parsley'],['Pesto Spaghetti',359,'Basil pesto, garlic, Parmesan'],['Classic Italian Arrabbiata',359,'Spicy slow-simmered tomato & garlic']]},
+   {g:'Penne', items:[['Alfredo Penne',369,'Rich garlic-butter cream sauce'],['Arrabbiata Penne',359,'Fiery tomato, chilli & herbs'],['Penne Pesto',359,'Fragrant basil pesto'],['Pink Sauce Pasta',369,'Tangy tomato meets silky cream']]}
+  ]},
+ {tab:'Pizza', art:'assets/cutouts/farmhouse-pizza.webp', cap:'Freshly hand-tossed', groups:[
+   {g:'Hand-Tossed Pizzas', items:[['Margherita',329,'Tomato, fresh mozzarella, basil'],['Easy Onion',349,'Fresh onions, tangy sauce, melted cheese'],['Paneer Tikka',389,'Spicy paneer tikka, onion & capsicum'],['Smoked Paneer',399,'Smoky paneer, perfectly charred'],['Farmhouse',399,'Loaded with fresh vegetables'],['Rustic Mushroom',399,'Earthy mushrooms & fresh herbs']]}
+  ]},
+ {tab:'Rice Bowls', art:'assets/cutouts/paneer-mexican-bowl.webp', cap:'From Mexico to Andhra', groups:[
+   {g:'Mexican Rice Bowls', items:[['Urban Veg Bowl',299],['Mushroom Bowl',299],['Paneer Bowl',319]]},
+   {g:'Thai Combos', items:[['Thai Red Curry with Rice',329],['Thai Green Curry with Rice',329]]},
+   {g:'Chef’s Fusion Specials', items:[['Andhra Soul Bowl',349,'Muddha pappu with tangy house avakaya & steamed rice'],['Saapasá Avakaya Rice Bowl',349,'Fiery avakaya, crunchy podi, drizzle of ghee'],['Andhra Heritage Bowl',349,'Tangy gongura folded into hot rice']]}
+  ]},
+ {tab:'Mocktails', art:null, cap:'Cold notes, high spirits', groups:[
+   {g:'Mocktails', items:[['Virgin Mojito',169],['Blue Island',189],['Mexican Lime',189],['Litchi Passion',189],['Jamaican Breeze',249],['Tropical Sunset',249],['Wild Berry Mash',249],['Red Wine Margarita',269],['Seasonal Sensation',269]]}
+  ]},
+ {tab:'Desserts', art:'assets/cutouts/tiramisu.webp', cap:'The closing note', groups:[
+   {g:'Desserts Bar', items:[['Brownie',169],['Brownie with Ice-Cream',249],['Blueberry Cheesecake',249],['Lotus Biscoff',269],['Turkish Kunafa',259],['Nutella Kunafa',269],['Tiramisu',279]]}
+  ]}
+];
+
+/* marquee */
+(function(){
+  const names=['Hand-tossed Pizzas','In-house Focaccia','Andhra Soul Bowls','Slow Coffee','Biscoff Frappé','Fresh Pasta','Smoothie Bowls','Turkish Kunafa'];
+  const half=names.map(n=>`<span>${n}</span><span class="n">♪</span>`).join('');
+  document.getElementById('mq').innerHTML=half+half;
+})();
+
+/* menu render */
+(function(){
+  const tabs=document.getElementById('tabs'), panels=document.getElementById('panels');
+  MENU.forEach((cat,i)=>{
+    const b=document.createElement('button');
+    b.className='tab'; b.textContent=cat.tab; b.setAttribute('role','tab');
+    b.setAttribute('aria-selected', i===0?'true':'false');
+    b.addEventListener('click',()=>select(i));
+    tabs.appendChild(b);
+    const p=document.createElement('div');
+    p.className='menu-panel'+(i===0?' on':'');
+    p.innerHTML=`
+      <div class="panel-art"><div style="text-align:center">
+        ${cat.art?`<img src="${cat.art}" alt="">`:`<div class="bignote">♪</div>`}
+        <div class="cap">${cat.cap}</div>
+      </div></div>
+      <div class="items">
+        ${cat.groups.map(gr=>`
+          <div class="group">${gr.g}</div>
+          ${gr.items.map(it=>`
+            <div class="item">
+              <div><span class="nm">${it[0]}</span>${it[2]?`<span class="ds">${it[2]}</span>`:''}</div>
+              <span class="dots"></span><span class="pr">₹${it[1]}</span>
+            </div>`).join('')}`).join('')}
+        ${cat.fine?`<div class="fine">${cat.fine}</div>`:''}
+      </div>`;
+    panels.appendChild(p);
+  });
+  function select(i){
+    [...tabs.children].forEach((t,j)=>t.setAttribute('aria-selected', j===i?'true':'false'));
+    [...panels.children].forEach((p,j)=>p.classList.toggle('on', j===i));
+    if (window.gsap && !reduced){
+      const art=panels.children[i].querySelector('.panel-art img, .panel-art .bignote');
+      const its=panels.children[i].querySelectorAll('.item, .group');
+      if(art) gsap.fromTo(art,{y:36,opacity:0},{y:0,opacity:1,duration:.7,ease:'power3.out'});
+      gsap.fromTo(its,{y:16,opacity:0},{y:0,opacity:1,duration:.5,stagger:.02,ease:'power2.out',overwrite:'auto'});
+    }
+  }
+})();
+
+/* motion */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (window.gsap && !reduced){
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* hero entrance: words slide in from opposite sides, dish rises through them */
+  gsap.from('#w1',{x:-120,opacity:0,duration:1.1,ease:'power3.out',delay:.1});
+  gsap.from('#w2',{x:120,opacity:0,duration:1.1,ease:'power3.out',delay:.25});
+  gsap.from('#heroDish',{y:90,opacity:0,scale:.85,duration:1.3,ease:'power3.out',delay:.35});
+  gsap.from('.hero-sub,.hero-ctas',{y:24,opacity:0,duration:.9,stagger:.12,delay:.7,ease:'power2.out'});
+  gsap.from('.corner',{opacity:0,y:14,duration:1,stagger:.15,delay:.9});
+  gsap.to('#heroDish',{y:'+=16',duration:2.6,repeat:-1,yoyo:true,ease:'sine.inOut'});
+  /* words drift apart slowly as you scroll away */
+  gsap.to('#w1',{xPercent:-8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#w2',{xPercent:8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#heroDish',{yPercent:-24,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  /* leaves drift */
+  document.querySelectorAll('.leaf').forEach((l,i)=>{
+    gsap.to(l,{y:'+='+(18+i*6),x:'+='+(i%2? -14:14),rotation:'+='+(i%2?-12:12),duration:5+i,repeat:-1,yoyo:true,ease:'sine.inOut'});
+  });
+  if (matchMedia('(pointer:fine)').matches){
+    document.querySelector('.hero').addEventListener('mousemove',e=>{
+      const cx=(e.clientX/innerWidth-.5), cy=(e.clientY/innerHeight-.5);
+      gsap.to('#heroDish',{x:cx*22,duration:.9,overwrite:'auto'});
+      gsap.to('#w1',{x:cx*-10,duration:1.1});
+      gsap.to('#w2',{x:cx*10,duration:1.1});
+    });
+  }
+
+  /* robust reveal helper: explicit start/end, never leaves content hidden */
+  const reveal=(targets,fromVars,toVars,trigVars)=>{
+    const t=gsap.utils.toArray(targets);
+    if(!t.length) return;
+    gsap.fromTo(t,fromVars,{...toVars,scrollTrigger:trigVars});
+  };
+
+  /* chapters: ghost word slides horizontally with scroll; dish + copy reveal */
+  gsap.utils.toArray('.chapter').forEach((ch,i)=>{
+    const ghost=ch.querySelector('.ghost');
+    gsap.fromTo(ghost,{xPercent:i%2?-18:2},{xPercent:i%2?2:-18,ease:'none',
+      scrollTrigger:{trigger:ch,start:'top bottom',end:'bottom top',scrub:true}});
+    const img=ch.querySelector('.ch-inner img');
+    const bits=ch.querySelectorAll('.ch-inner > *:not(img)');
+    const tl=gsap.timeline({scrollTrigger:{trigger:ch,start:'top 70%'}});
+    tl.fromTo(img,{y:70,opacity:0,scale:.86},{y:0,opacity:1,scale:1,duration:1,ease:'power3.out'})
+      .fromTo(bits,{y:28,opacity:0},{y:0,opacity:1,duration:.6,stagger:.09,ease:'power2.out'},'-=.6');
+    gsap.to(img,{y:'+=14',duration:2.6+i*.3,repeat:-1,yoyo:true,ease:'sine.inOut',delay:1.2});
+  });
+
+  /* menu */
+  reveal('.menu-head > *',{y:30,opacity:0},{y:0,opacity:1,duration:.8,stagger:.1,ease:'power2.out'},
+    {trigger:'.menu-head',start:'top 85%'});
+  reveal('.tabs .tab',{y:18,opacity:0},{y:0,opacity:1,duration:.5,stagger:.04,ease:'power2.out'},
+    {trigger:'.tabs',start:'top 92%'});
+  gsap.utils.toArray('.panel-art img, .panel-art .bignote').forEach((el,i)=>{
+    gsap.to(el,{y:'+=10',duration:2.6+i*.2,repeat:-1,yoyo:true,ease:'sine.inOut'});
+  });
+
+  /* ambience drift */
+  const row=document.getElementById('ambRow');
+  const drift=()=>Math.max(0,row.scrollWidth-innerWidth+64);
+  gsap.to(row,{x:()=>-drift(),ease:'none',
+    scrollTrigger:{trigger:'.amb',start:'top 60%',end:'bottom top',scrub:.8,invalidateOnRefresh:true}});
+  reveal('.amb-head > *',{y:30,opacity:0},{y:0,opacity:1,duration:.8,stagger:.1},
+    {trigger:'.amb-head',start:'top 85%'});
+
+  /* visit + footer */
+  reveal('#visitMedia',{x:-60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out'},
+    {trigger:'.visit',start:'top 70%'});
+  reveal('.visit-info > *',{y:26,opacity:0},{y:0,opacity:1,duration:.7,stagger:.08},
+    {trigger:'.visit-info',start:'top 78%'});
+  reveal('footer > *',{y:24,opacity:0},{y:0,opacity:1,duration:.8,stagger:.1},
+    {trigger:'footer',start:'top 95%'});
+
+  /* keep trigger positions honest after fonts/images settle */
+  window.addEventListener('load',()=>ScrollTrigger.refresh());
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(()=>ScrollTrigger.refresh());
+  setTimeout(()=>ScrollTrigger.refresh(), 1200);
+}
+</script>
+</body>
+</html>
