@@ -11,10 +11,10 @@ Built by [SnapSiteBuild.com](https://www.snapsitebuild.com).
 - `sitemap.xml`, `robots.txt`, `llms.txt` — SEO & AI-SEO files
 
 ## Deploying
-Static site — host anywhere (GitHub Pages, Netlify, Vercel, any web server). No build step.
+Static site on Netlify — no build step. `netlify.toml` sets an empty build command and publishes the repo root. In Netlify: Site configuration → Build & deploy → link this GitHub repo, branch `master`; every push then deploys automatically.
 
 ## SEO checklist for the team
-1. Replace the placeholder domain `https://www.saapasacafe.com` with the live domain in: `index.html` (canonical, OG tags, JSON-LD), `sitemap.xml`, `robots.txt`, `llms.txt`.
+1. Live domain is `https://saapasacafe.com` (canonical). `netlify.toml` 301-redirects www and sapasacafe.com to it. Hosted on Netlify; DNS via Netlify nameservers set at GoDaddy.
 2. Verify the property in Google Search Console and submit `sitemap.xml`.
 3. Link the site from the Google Business Profile (maps listing) and Instagram bio.
 4. Structured data included: `Restaurant` (address, geo, hours, menu sections, 4.7★ aggregate rating), `WebSite`, `FAQPage`. Validate at https://search.google.com/test/rich-results after domain swap.

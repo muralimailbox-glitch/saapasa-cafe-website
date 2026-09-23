@@ -11,4 +11,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://www.saapasacafe.com/sitemap.xml
+Sitemap: https://saapasacafe.com/sitemap.xml

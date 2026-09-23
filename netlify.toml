@@ -1,0 +1,34 @@
+# Static site — no build step. Netlify serves the repo root as-is.
+[build]
+  command = ""
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+# Canonical domain: send www and the alternate spelling to https://saapasacafe.com
+[[redirects]]
+  from = "https://www.saapasacafe.com/*"
+  to = "https://saapasacafe.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://sapasacafe.com/*"
+  to = "https://saapasacafe.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.sapasacafe.com/*"
+  to = "https://saapasacafe.com/:splat"
+  status = 301
+  force = true
