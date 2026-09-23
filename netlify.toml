@@ -3,10 +3,6 @@
   command = ""
   publish = "."
 
-
-# This is plain HTML, not Next.js: stop Netlify auto-running the Next.js runtime plugin
-[build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 [[headers]]
   for = "/*"
   [headers.values]
